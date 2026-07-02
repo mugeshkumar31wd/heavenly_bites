@@ -536,8 +536,8 @@ function renderProducts() {
         
         return `
             <div class="product-card">
-                <div class="card-img-wrapper">
-                    <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
+                <div class="c-visual-wrapper">
+                    <img src="${product.image}" alt="${product.name}" class="c-photo-element" loading="lazy">
                     ${badgeHTML}
                     <button class="wishlist-btn-overlay ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist('${product.id}')" title="Add to Wishlist">
                         <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
@@ -554,8 +554,8 @@ function renderProducts() {
                     
                     <p class="product-desc">${product.description}</p>
                     
-                    <div class="price-row">
-                        <span class="price-val">₹${product.price}</span>
+                    <div class="cost-details-row">
+                        <span class="cost-val">₹${product.price}</span>
                         <span class="flavor-tag-small">${product.flavor}</span>
                     </div>
                     
@@ -1107,7 +1107,7 @@ function setupScrollTriggerAnimations() {
                     revealObserver.unobserve(entry.target); // trigger once
                 }
             });
-        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        }, { threshold: 0, rootMargin: "0px 0px -50px 0px" });
 
         scrollRevealElements.forEach(el => {
             revealObserver.observe(el);
@@ -1347,3 +1347,4 @@ function showToast(message, type = "success") {
         }, 300);
     }, 3500);
 }
+
