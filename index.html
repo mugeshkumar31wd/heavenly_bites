@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Bites | Premium Artisan Cake Shop</title>
+    <meta name="description" content="Indulge in premium, freshly baked artisanal cakes, custom cakes, and brownies at Heavenly Bites. Handcrafted sweetness delivered to your door.">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================
+      NAVBAR
+    ========================================== -->
+    <header class="header-container">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#home" class="logo-link">
+                    <!-- Bakery Logo -->
+                    <img src="assets/images/image.png" alt="Heavenly Bites Logo" class="bakery-logo">
+                    <span class="brand-title">Heavenly <span class="accent-text">Bites</span></span>
+                </a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links-list" id="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#customizer" class="nav-link">Customization</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <!-- Icons for Cart and Wishlist -->
+                <li class="nav-icon-li">
+                    <a href="#" id="wishlist-nav-btn" class="nav-icon-link" aria-label="Wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="badge wishlist-count-badge" id="wishlist-count-badge">0</span>
+                    </a>
+                </li>
+                <li class="nav-icon-li">
+                    <a href="#" id="cart-nav-btn" class="nav-icon-link" aria-label="Shopping Cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="badge cart-count-badge" id="cart-count-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==========================================
+          HERO SECTION
+        ========================================== -->
+        <section id="home" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title scroll-reveal">
+                    Freshly Baked Happiness <br><span class="highlight-text">Delivered To Your Door</span>
+                </h1>
+                <p class="hero-subtitle scroll-reveal">
+                    Indulge in our exquisite selection of premium, handcrafted artisan cakes, cupcakes, and decadent brownies made with pure love and the finest ingredients.
+                </p>
+                <div class="hero-actions scroll-reveal">
+                    <a href="#menu" class="btn btn-primary">Order Now</a>
+                    <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+                </div>
+            </div>
+
+            <!-- Floating Cake Illustrations for Premium Atmosphere -->
+            <div class="floating-cakes-container">
+                <div class="floating-cake float-1">🍰</div>
+                <div class="floating-cake float-2">🧁</div>
+                <div class="floating-cake float-3">🍩</div>
+                <div class="floating-cake float-4">🍫</div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+          MENU & FILTER SECTION
+        ========================================== -->
+        <section id="menu" class="menu-section scroll-reveal">
+            <div class="section-header">
+                <span class="sub-heading">From Our Oven</span>
+                <h2 class="section-title">Explore Our Delicious Menu</h2>
+                <div class="decorator-line"><span></span></div>
+            </div>
+
+            <!-- Search, Filter & Sorting Bar -->
+            <div class="filter-controls-container">
+                <!-- Search Box -->
+                <div class="search-box-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search cakes, flavors, categories...">
+                </div>
+
+                <!-- Sorting Dropdown -->
+                <div class="sort-wrapper">
+                    <label for="sort-select">Sort By:</label>
+                    <select id="sort-select" class="sort-dropdown">
+                        <option value="popular">Popularity (High Rated)</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="category-filters-scroll">
+                <div class="category-filters-container">
+                    <button class="category-pill active" data-category="All">All Cakes</button>
+                    <button class="category-pill" data-category="Anniversary Cakes">Anniversary Cakes</button>
+                    <button class="category-pill" data-category="Cartoon Cakes">Cartoon Cakes</button>
+                    <button class="category-pill" data-category="Doll Cakes">Doll Cakes</button>
+                    <button class="category-pill" data-category="Customized Cakes">Customized Cakes</button>
+                    <button class="category-pill" data-category="Normal Cakes">Normal Cakes</button>
+                    <button class="category-pill" data-category="Brownies">Brownies</button>
+                </div>
+            </div>
+
+         
+            <!-- Products Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Injected dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+          CAKE CUSTOMIZER SECTION
+        ========================================== -->
+        <section id="customizer" class="customizer-section scroll-reveal">
+            <div class="section-header">
+                <span class="sub-heading">Design Your Own</span>
+                <h2 class="section-title">Cake Customization Studio</h2>
+                <div class="decorator-line"><span></span></div>
+            </div>
+
+            <div class="customizer-container">
+                <!-- Customizer Input Form -->
+                <div class="customizer-form-wrapper">
+                    <form id="cake-customizer-form" class="customizer-form">
+                        <h3 class="form-title">Customize Details</h3>
+                        <p class="form-subtitle">Fill in the fields below to customize your cake. View changes instantly in the preview panel.</p>
+
+                        <div class="form-group">
+                            <label for="custom-name">Name on Cake</label>
+                            <input type="text" id="custom-name" maxlength="20" placeholder="E.g., Happy Birthday Jack">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group half-width">
+                                <label for="custom-flavor">Select Flavor</label>
+                                <select id="custom-flavor" required>
+                                    <option value="Vanilla">Vanilla Cream</option>
+                                    <option value="Chocolate">Chocolate Fudge</option>
+                                    <option value="Strawberry">Strawberry Swirl</option>
+                                    <option value="Mango">Mango Burst</option>
+                                    <option value="Pineapple">Classic Pineapple</option>
+                                    <option value="Red Velvet">Rich Red Velvet</option>
+                                </select>
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="custom-weight">Weight</label>
+                                <select id="custom-weight" required>
+                                    <option value="1.0 kg">1.0 kg (Standard)</option>
+                                    <option value="0.5 kg">0.5 kg</option>
+                                    <option value="1.5 kg">1.5 kg (+₹200)</option>
+                                    <option value="2.0 kg">2.0 kg (+₹400)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custom-message">Gift Card Message</label>
+                            <textarea id="custom-message" rows="3" placeholder="Write a sweet message to go with the cake..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custom-date">Delivery Date</label>
+                            <input type="date" id="custom-date" required>
+                        </div>
+
+                        <!-- Reference Image Field with restrictions -->
+                        <div class="form-group">
+                            <label for="custom-image">Upload Reference Image <span class="required-note">(Images only: PNG, JPG, JPEG)</span></label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="custom-image" accept="image/*">
+                                <span class="file-custom-btn"><i class="fa-solid fa-cloud-arrow-up"></i> Choose Image</span>
+                            </div>
+                            <small class="help-text">Audio and video files (mp3, mp4, etc.) are strictly prohibited.</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Add Customized Cake to Cart</button>
+                    </form>
+                </div>
+
+                <!-- Customizer Live Preview Panel -->
+                <div class="customizer-preview-wrapper">
+                    <h3 class="preview-title">Live 3D-Like Preview</h3>
+                    <div class="cake-preview-canvas">
+                        
+                        <!-- Dynamic Visual Cake Model -->
+                        <div class="cake-model-container">
+                            <div class="cake-preview-3d" id="cake-preview-3d">
+                                <!-- Top Icing / Text Layer -->
+                                <div class="cake-top">
+                                    <div class="cake-text-overlay" id="prev-name-text">Name on Cake</div>
+                                    <div class="sprinkles"></div>
+                                </div>
+                                <!-- Cake Layers -->
+                                <div class="cake-middle-layer"></div>
+                                <div class="cake-bottom-layer"></div>
+                                <div class="cake-stand"></div>
+                            </div>
+                        </div>
+
+                        <!-- Live Details Overlay -->
+                        <div class="preview-details-overlay">
+                            <span class="preview-weight-badge" id="prev-weight-badge">1.0 kg</span>
+                            <div class="message-card-preview">
+                                <h4 class="card-title">Gift Card Preview</h4>
+                                <p class="card-message" id="prev-msg-text">Gift message displays here</p>
+                            </div>
+                            <!-- Uploaded Reference Image Preview container -->
+                            <div class="uploaded-ref-preview" id="prev-ref-image-container" style="display:none;">
+                                <span>Reference Photo:</span>
+                                <img id="prev-ref-img" src="" alt="Custom Reference Image Preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+          ABOUT & STATISTICS SECTION
+        ========================================== -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="about-grid">
+                <!-- Textual Story -->
+                <div class="about-text-column">
+                    <span class="sub-heading">Our Story</span>
+                    <h2 class="section-title">Crafting Sweet Memories Since 2018</h2>
+                    <div class="decorator-line-left"><span></span></div>
+                    <p class="about-p">
+                        Heavenly Bites started in a cozy home kitchen with a simple dream: to bring pure, freshly baked joy to everyday celebrations. Over the years, our passion for exceptional flavor and premium artistry has grown into a beloved local bakery.
+                    </p>
+                    <p class="about-p">
+                        Led by our Master Chocolatier and Executive Pastry Chef, we hand-frost each design with precision. We never compromise on quality, sourcing premium Belgian chocolates, organic dairy, and fresh fruit purees to ensure every single bite is truly heavenly.
+                    </p>
+
+                    <!-- Achievements Row -->
+                    <div class="achievements-row">
+                        <div class="achievement-badge">
+                            <i class="fa-solid fa-award"></i>
+                            <span>Best Local Bakery Award</span>
+                        </div>
+                        <div class="achievement-badge">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>100% Organic Ingredients Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic/Visual Frame -->
+                <div class="about-image-column">
+                    <div class="chef-image-frame">
+                        <img src="assets/images/anniversary2.jpg" alt="Our Master Chef Decorating Cake" class="chef-img">
+                        <div class="experience-card">
+                            <span class="exp-years">8+</span>
+                            <span class="exp-text">Years of Baking Mastery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Dashboard Grid -->
+            <div class="statistics-section scroll-reveal">
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fa-solid fa-face-smile"></i></div>
+                    <span class="stat-num" id="stat-customers" data-target="10000">0+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fa-solid fa-cake-candles"></i></div>
+                    <span class="stat-num" id="stat-sold" data-target="15000">0+</span>
+                    <span class="stat-label">Cakes Sold</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fa-solid fa-calendar-check"></i></div>
+                    <span class="stat-num" id="stat-years" data-target="8">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <span class="stat-num" id="stat-orders" data-target="3200">0+</span>
+                    <span class="stat-label">Custom Orders</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+          SPECIAL OFFERS (COUNTDOWN TIMER) SECTION
+        ========================================== -->
+        <section class="special-offers-section scroll-reveal">
+            <div class="offers-container">
+                <div class="offers-text">
+                    <span class="offer-tag-badge">FLASH SALE</span>
+                    <h2 class="offer-title">Midnight Choco Delight Special!</h2>
+                    <p class="offer-desc">
+                        Get flat <strong>20% OFF</strong> on all Chocolate and Custom cakes ordered before midnight today. Use code <strong class="promo-code">HEAVEN20</strong> at checkout.
+                    </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-timer-container">
+                        <div class="time-box">
+                            <span class="time-num" id="timer-hours">00</span>
+                            <span class="time-lbl">Hours</span>
+                        </div>
+                        <div class="time-divider">:</div>
+                        <div class="time-box">
+                            <span class="time-num" id="timer-minutes">00</span>
+                            <span class="time-lbl">Mins</span>
+                        </div>
+                        <div class="time-divider">:</div>
+                        <div class="time-box">
+                            <span class="time-num" id="timer-seconds">00</span>
+                            <span class="time-lbl">Secs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="offers-img-wrapper">
+                    <img src="assets/images/triplechoco.jpg" alt="Decadent Chocolate Cake Offer" class="offer-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+          CUSTOMER REVIEWS SECTION
+        ========================================== -->
+        <section id="reviews" class="reviews-section scroll-reveal">
+            <div class="section-header">
+                <span class="sub-heading">Client Love</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="decorator-line"><span></span></div>
+            </div>
+
+            <!-- Auto-sliding testimonial carousel -->
+            <div class="carousel-viewport">
+                <div class="carousel-track">
+                    
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-comment">
+                            "The Barbie Doll cake we ordered for my daughter's 5th birthday was absolutely gorgeous and extremely delicious! Not overly sweet, and the frosting was super creamy. Everyone loved it!"
+                        </p>
+                        <div class="review-author">
+                            <div class="author-info">
+                                <span class="author-name">Priya Sharma</span>
+                                <span class="author-designation">Verified Customer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-comment">
+                            "Heavenly Bites makes the absolute best brownies in town! Crispy on the outside, dense and fudgy on the inside. The Triple Chocolate brownie is an absolute masterpiece."
+                        </p>
+                        <div class="review-author">
+                            <div class="author-info">
+                                <span class="author-name">Rohan Malhotra</span>
+                                <span class="author-designation">Food Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="review-comment">
+                            "The customization tool was incredibly simple. I uploaded a reference sketch of a butterfly cake and selected strawberry flavor. They executed it perfectly. Timely delivery too!"
+                        </p>
+                        <div class="review-author">
+                            <div class="author-info">
+                                <span class="author-name">Anjali Deshmukh</span>
+                                <span class="author-designation">Verified Customer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Testimonials Navigation Arrows -->
+                <button class="carousel-arrow prev" aria-label="Previous Review"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-arrow next" aria-label="Next Review"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+          FAQ SECTION (ACCORDION)
+        ========================================== -->
+        <section class="faq-section scroll-reveal">
+            <div class="section-header">
+                <span class="sub-heading">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="decorator-line"><span></span></div>
+            </div>
+
+            <div class="accordion-container">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How far in advance should I order custom cakes?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We recommend ordering custom cakes at least 2 to 3 days in advance. For large custom orders or wedding cakes, a week's notice ensures we have adequate time to design and prepare ingredients.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Do you offer eggless options for your cakes?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, all our cakes and brownies can be prepared 100% eggless upon request. Simply state your preference in the customization notes or choose the eggless customization options.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is your delivery coverage area and cost?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We deliver within a 15km radius of our main kitchen. Delivery is absolutely free for all orders above ₹499. For orders below ₹499, a nominal delivery fee of ₹40 applies.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Can I upload a picture of a design I want?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Absolutely! Use our Cake Customization Studio section above to fill in the flavor details, write names, and upload your reference layout (supported image formats: PNG, JPG, JPEG). Our bakers will construct it accordingly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+          CONTACT & NEWSLETTER SECTION
+        ========================================== -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-header">
+                <span class="sub-heading">Get In Touch</span>
+                <h2 class="section-title">Visit Us Or Drop A Line</h2>
+                <div class="decorator-line"><span></span></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Details column -->
+                <div class="contact-info-column">
+                    <h3 class="contact-subtitle">Contact Details</h3>
+                    <p class="contact-intro">Have questions regarding a custom event order? Our team is always ready to assist you.</p>
+
+                    <div class="contact-detail-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+91 98765 43210 / +91 91234 56789</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>hello@heavenlybites.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Our Bakery Shop</h4>
+                            <p>Plot 45, Sweet Bakery Lane, Indiranagar, Bengaluru, Karnataka, 560038</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sun: 09:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="social-links-container">
+                        <h4>Follow Our Sweet Journey:</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form column -->
+                <div class="contact-form-column">
+                    <form id="contact-form" class="contact-form">
+                        <h3 class="form-title">Send a Message</h3>
+                        <div class="form-group">
+                            <label for="contact-name">Your Full Name</label>
+                            <input type="text" id="contact-name" placeholder="E.g., John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email Address</label>
+                            <input type="email" id="contact-email" placeholder="E.g., johndoe@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" placeholder="E.g., Special Custom Wedding Cake Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message</label>
+                            <textarea id="contact-message" rows="5" placeholder="Write details of your inquiry here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+      FOOTER
+    ========================================== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="assets/images/image.png" alt="Heavenly Bites Logo" class="bakery-logo">
+                    <span>Heavenly <span class="accent-text">Bites</span></span>
+                </div>
+                <p class="footer-desc-p">
+                    Delivering premium gourmet cakes and brownies designed to illuminate your special occasions with absolute sweetness.
+                </p>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Our Menu</a></li>
+                    <li><a href="#about">About Bakery</a></li>
+                    <li><a href="#customizer">Customization</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Our Specialties</h4>
+                <ul>
+                    <li><a href="#menu" onclick="activeCategoryFilter='Anniversary Cakes'; renderProducts();">Anniversary Cakes</a></li>
+                    <li><a href="#menu" onclick="activeCategoryFilter='Cartoon Cakes'; renderProducts();">Cartoon Cakes</a></li>
+                    <li><a href="#menu" onclick="activeCategoryFilter='Doll Cakes'; renderProducts();">Doll Cakes</a></li>
+                    <li><a href="#menu" onclick="activeCategoryFilter='Customized Cakes'; renderProducts();">Customized Cakes</a></li>
+                    <li><a href="#menu" onclick="activeCategoryFilter='Normal Cakes'; renderProducts();">Classic Cakes</a></li>
+                    <li><a href="#menu" onclick="activeCategoryFilter='Brownies'; renderProducts();">Gourmet Brownies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col subscribe-col">
+                <h4>Visit Shop</h4>
+                <p class="shop-address">
+                    Plot 45, Sweet Bakery Lane,<br>
+                    Indiranagar, Bengaluru, 560038
+                </p>
+                <p class="shop-hours">Open Daily: 9 AM - 11 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Heavenly Bites Bakery. All rights reserved. Made with ❤️ for sweet lovers.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+      DRAWERS & OVERLAYS (CART & WISHLIST)
+    ========================================== -->
+    <!-- Drawer Overlay Backdrops -->
+    <div class="drawer-overlay" id="cart-overlay"></div>
+    <div class="drawer-overlay" id="wishlist-overlay"></div>
+
+    <!-- Shopping Cart Slide-out Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Your Shopping Cart (<span class="cart-count-badge">0</span>)</h3>
+            <button class="close-drawer-btn" id="close-cart" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body">
+            <!-- Scrollable list of items -->
+            <div class="cart-items-list" id="cart-items-container">
+                <!-- Injected dynamically by JS -->
+            </div>
+
+            <!-- Checkout Details Form -->
+            <div class="checkout-form-container" id="checkout-form-container" style="display:none;">
+                <div class="drawer-divider"></div>
+                <h4 class="checkout-form-title">Delivery Details</h4>
+                <form id="cart-checkout-form" class="cart-checkout-form">
+                    <div class="form-group small">
+                        <label for="checkout-name">Recipient Name</label>
+                        <input type="text" id="checkout-name" required placeholder="E.g., John Doe">
+                    </div>
+                    <div class="form-group small">
+                        <label for="checkout-phone">Contact Phone</label>
+                        <input type="tel" id="checkout-phone" pattern="[0-9]{10}" title="Ten digit mobile number" required placeholder="E.g., 9876543210">
+                    </div>
+                    <div class="form-group small">
+                        <label for="checkout-address">Delivery Address</label>
+                        <textarea id="checkout-address" rows="2" required placeholder="Full street address..."></textarea>
+                    </div>
+
+                    <div class="price-summary-box">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="cart-total-price" class="summary-total-val">₹0</span>
+                        </div>
+                        <div class="summary-row green">
+                            <span>Delivery Fee:</span>
+                            <span>FREE</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block checkout-submit-btn">Place Order (Cash on Delivery)</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Drawer -->
+    <div class="wishlist-drawer" id="wishlist-drawer">
+        <div class="drawer-header">
+            <h3>Your Wishlist (<span class="wishlist-count-badge">0</span>)</h3>
+            <button class="close-drawer-btn" id="close-wishlist" aria-label="Close Wishlist"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body">
+            <div class="wishlist-items-list" id="wishlist-items-container">
+                <!-- Injected dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
