@@ -639,7 +639,10 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 35px;
-}
+   
+} 
+
+
 
 .no-results {
     grid-column: 1 / -1;
@@ -663,8 +666,22 @@ a {
     transition: var(--transition-smooth);
     border: 1px solid var(--cream-medium);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0% 50%;
 }
+@keyframes scroll{
+from{
+    scale:0.3;
+    opacity:0;
+}
+to{
+    scale:1;
+    opacity:1;  }
+
+}
+
 
 .product-card:hover {
     transform: translateY(-10px);
